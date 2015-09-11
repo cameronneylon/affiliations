@@ -1,0 +1,56 @@
+Notes on data
+==============
+
+Issues with data files
+---------------------------
+
+The file PLoS_Biol_2009_Feb_24_7(2)_e1000046.nxml has the author affiliations wrong with
+them labeled as editors.
+
+The file PLoS_Comput_Biol_2005_Aug_26_1(3)_e33.nxml doesn’t have an appropriate affiliation
+tag and the parsing therefore fails.
+
+Data Issues
+-----------
+
+Article Types
+
+A set of PLOS Bio articles from 2004-5 are labelled as research articles but
+are other types (based on the <subject> tag). This is detected by a test that
+seeks to ensure that research articles have an author list. This seems to be entirely in 
+the date period. 
+
+A further set have been identified that are tagged as "other" in the xml and also have
+some other type in a <subject> tag. Current approach is to label these as "plos/synopsis" 
+or "plos/correspondence" or similar in article_type field.
+
+Address issues for articles from consortia
+
+These articles from PLOS Medicine arise from consortia where the addresses are not
+made available as structured data. To get a full picture it will be necessary to 
+parse the unstructured affiliations from the acknowledgements section.
+
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2014_Jul_29_11(7)_e1001685.nxml
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2013_Dec_3_10(12)_e1001564.nxml
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2012_Jun_5_9(6)_e1001230.nxml
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2012_Mar_20_9(3)_e1001194.nxml
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2012_Jul_10_9(7)_e1001259.nxml
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2011_Nov_8_8(11)_e1001119.nxml
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2011_Jun_14_8(6)_e1001045.nxml
+No Address in article: affiliations/data/PLoS_Med/PLoS_Med_2006_Nov_21_3(11)_e483.nxml
+
+Also two in PLOS Bio
+
+No Address in article: affiliations/data/PLoS_Biol/PLoS_Biol_2011_Apr_19_9(4)_e1001046.nxml
+No Address in article: affiliations/data/PLoS_Biol/PLoS_Biol_2010_Feb_23_8(2)_e1000313.nxml
+
+Corresponding author issues
+
+A significant number of articles do not have a corresponding author properly marked. These can
+be picked up via testing.They are mostly editorials, synopses or other commentaries but some 
+are research articles. They are mostly concentrated in early dates and there are a relatively
+small number. 
+
+Articles with author affiliation missing
+
+Author Zhou in: PLoS_One_2015_Mar_6_10(3)_e0119216.nxml

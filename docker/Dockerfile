@@ -43,6 +43,9 @@ RUN pip install cython
 
 RUN pip install lxml
 
+### "beautifulsoup"
+RUN pip install beautifulsoup4
+
 ### "scipy"
 RUN apt-get install python-scipy
 RUN apt-get install python-numpy
